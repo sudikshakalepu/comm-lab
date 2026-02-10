@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cast - The Elevator and the Elevated</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- fullscreen vid bg -->
+    <!-- 09/02: switched to YouTube embed with controls for consistent playback experience -->
+    <div class="video-container">
+      <iframe
+        src="https://www.youtube.com/embed/NsUKwkkrvws?enablejsapi=1&controls=1&modestbranding=1&rel=0"
+        frameborder="0"
+        allow="
+          accelerometer;
+          autoplay;
+          clipboard-write;
+          encrypted-media;
+          gyroscope;
+          picture-in-picture;
+        "
+        allowfullscreen
+      ></iframe>
+    </div>
+
+    <!-- dark overlay -->
+    <div class="overlay"></div>
+
+    <!-- cast popup -->
+    <div class="popup cast-popup">
+      <a href="index.html" class="back-btn">← Back</a>
+      <h1>Meet the Cast</h1>
+      <p class="cast-subtitle">
+        The characters behind <strong>The Elevator and the Elevated</strong>
+      </p>
+
+      <div class="cast-grid">
+        <!-- Selfie Queen — pink -->
+        <div class="cast-member">
+          <h3>📸 The Selfie Queen</h3>
+          <p class="signature">
+            <strong>Signature Move:</strong> Finds the perfect angle in any
+            lighting
+          </p>
+          <p class="quote">
+            "Every elevator ride is a photo opportunity. You just don't get it."
+          </p>
+        </div>
+
+        <!-- Loud Speaker — orange -->
+        <div class="cast-member">
+          <h3>📢 The Loud Speaker</h3>
+          <p class="signature">
+            <strong>Signature Move:</strong> Phone calls on speaker at max
+            volume
+          </p>
+          <p class="quote">
+            "Can you hear me now? GOOD. So anyway, like I was saying..."
+          </p>
+        </div>
+
+        <!-- Frantic Texter — purple -->
+        <div class="cast-member">
+          <h3>📱 The Frantic Texter</h3>
+          <p class="signature">
+            <strong>Signature Move:</strong> Nail-clicking keyboard chaos
+          </p>
+          <p class="quote">
+            "*click click click* OMG sorry *click click* one sec *click*"
+          </p>
+        </div>
+
+        <!-- Social Butterfly — yellow -->
+        <div class="cast-member">
+          <h3>🦋 The Social Butterfly</h3>
+          <p class="signature">
+            <strong>Signature Move:</strong> Makes instant best friends
+          </p>
+          <p class="quote">
+            "Beautiful weather today, right? Oh, going to 5? Me too! Small
+            world!"
+          </p>
+        </div>
+      </div>
+
+      <a href="index.html#rewatch" class="cast-btn" id="cast-rewatch-btn"
+        >↻ Rewatch the Film</a
+      >
+    </div>
+
+    <script>
+      // If we landed here via the rewatch link, trigger rewatch on index immediately
+      // by storing a flag — index.html will pick it up on load.
+      document
+        .getElementById("cast-rewatch-btn")
+        .addEventListener("click", function (e) {
+          e.preventDefault();
+          sessionStorage.setItem("rewatch", "1");
+          window.location.href = "index.html";
+        });
+    </script>
+  </body>
+</html>
